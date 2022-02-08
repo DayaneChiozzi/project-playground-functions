@@ -13,16 +13,16 @@ function compareTrue(value1, value2) {
 // adc os paramentros base e height na função, criei uma variavel resultado com o calculo a ser utilizado
 // para o resultado proposto no return, que seria calcular os espaços de 1 triangulo.
 function calcArea(base, height) {
-  let resultado = base * height / 2;
-  return resultado
+  let resultado = (base * height) / 2;
+  return resultado;
 }
 
 // Desafio 3
-//Escreva uma função com o nome splitSentence, a qual receberá uma string e retornará uma array de strings
-//separadas por cada espaço na string original.
+// Escreva uma função com o nome splitSentence, a qual receberá uma string e retornará uma array de strings
+// separadas por cada espaço na string original.
 function splitSentence(string) {
-  let stringSeparada = string.split(" ");
-  return stringSeparada
+  let stringSeparada = string.split(' ');
+  return stringSeparada;
 }
 
 // Desafio 4
@@ -32,7 +32,7 @@ function concatName(listaDeNomes) {
   let firstName = listaDeNomes[0];
   let lastName = listaDeNomes[listaDeNomes.length - 1];
 
-  return lastName + ", " + firstName
+  return `${lastName}, ${firstName}`;
 }
 
 // Desafio 5
