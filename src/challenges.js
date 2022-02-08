@@ -1,20 +1,21 @@
 // Desafio 1
+// adc 2 paramentros na funcao compareTrue utilizando o &&(recebe 2 valores)
+// usei o if/else para retornar true ou falso( para descobrir se o valor era
+// true or false) então eu comparei value1 com true e value2 com true.
 function compareTrue(value1, value2) {
   if (value1 === true && value2 === true) {
-    return  true;
+    return true;
   } else {
-    return  false;
+    return false;
   }
 }
 
-console.log(compareTrue(true, false));
-
-
-
-
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+// adc os paramentros base e height na função, criei uma variavel resultado com o calculo a ser utilizado
+// para o resultado proposto no return, que seria calcular os espaços de 1 triangulo.
+function calcArea(base, height) {
+  let resultado = base * height / 2;
+  return resultado
 }
 
 // Desafio 3
