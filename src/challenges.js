@@ -36,13 +36,16 @@ function concatName(listaDeNomes) {
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+// esse requisito eu tive ajuda do meu marido, para atribuir a variavel points
+function footballPoints(wins, ties) {
+  let points = (3 * wins) + (ties * 1);
+  return points;
 }
+console.log(footballPoints(0, 0));
 
 // Desafio 6
 function highestCount() {
-  // seu código aqui
+
 }
 
 // Desafio 7
