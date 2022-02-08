@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 // Desafio 1
 // adc 2 paramentros na funcao compareTrue utilizando o &&(recebe 2 valores)
 // usei o if/else para retornar true ou falso( para descobrir se o valor era
@@ -43,8 +44,30 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-
+// 1º nomeei o paramentro da function para arrayNumber. depois utilizei o for para descobrir qual era o nº > do array.
+// abrindo uma var bigNumber, atrindo o valor "0", uma vez que eu não sabia os elementos dentro do array.
+// criei a condição if para verificar se o indice do array fosse maior que o indice armazenado na var bigNumber;
+// se sim, o retorno(bigNumber) seria ele(indice armazenado na var bigNumber).
+// depois criei outro for para descobrir quantas vezes esse nº se repetia no array. usei novamente o if e dei a
+// condição se, o numero armazenado na var bigNumber fosse igual ao fazer a 2ª volta(for) somasse + 1.
+// eslint-disable-next-line sonarjs/cognitive-complexity
+function highestCount(arrayNumber) {
+  let bigNumber = 0;
+  let repetBigNumber = 0;
+  for (let index = 0; index < arrayNumber.length; index += 1) {
+    if (arrayNumber[index] > bigNumber) {
+      bigNumber = arrayNumber[index];
+    }
+  }
+  for (let index = 0; index < arrayNumber.length; index += 1) {
+    if (arrayNumber[index] < 0) { // verifica se o numero é negativo
+      return 1;
+    }
+    if (bigNumber === arrayNumber[index]) {
+      repetBigNumber += 1;
+    }
+  }
+  return repetBigNumber;
 }
 
 // Desafio 7
