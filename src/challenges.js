@@ -26,8 +26,13 @@ function splitSentence(string) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+// https://medium.com/@rodrigoum/3-maneiras-de-pegar-o-primeiro-e-%C3%BAltimo-elemento-de-um-array-com-javascript-56e92e6bf3f4
+
+function concatName(listaDeNomes) {
+  let firstName = listaDeNomes[0];
+  let lastName = listaDeNomes[listaDeNomes.length - 1];
+
+  return lastName + ", " + firstName
 }
 
 // Desafio 5
