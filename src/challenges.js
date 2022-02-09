@@ -1,4 +1,3 @@
-/* eslint-disable complexity */
 // Desafio 1
 // adc 2 paramentros na funcao compareTrue utilizando o &&(recebe 2 valores)
 // usei o if/else para retornar true ou falso( para descobrir se o valor era
@@ -44,26 +43,37 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-// 1º nomeei o paramentro da function para arrayNumber. depois utilizei o for para descobrir qual era o nº > do array.
-// abrindo uma var bigNumber, atrindo o valor "0", uma vez que eu não sabia os elementos dentro do array.
-// criei a condição if para verificar se o indice do array fosse maior que o indice armazenado na var bigNumber;
-// se sim, o retorno(bigNumber) seria ele(indice armazenado na var bigNumber).
-// depois criei outro for para descobrir quantas vezes esse nº se repetia no array. usei novamente o if e dei a
-// condição se, o numero armazenado na var bigNumber fosse igual ao fazer a 2ª volta(for) somasse + 1.
-// eslint-disable-next-line sonarjs/cognitive-complexity
-function highestCount(arrayNumber) {
+
+// 1º nomeei o paramentro da function para arrayNumbers.
+// depois utilizei o for para descobrir qual era o nº > do array. Depois de muitas tentativas, achei melhor criar uma
+// função aux que me desse o maior numero. Nomeei o nome dela para searchHigherNumber, coloquei um paramentro
+// (arrayNumber), abri uma variavel bigNumber e atribui o valor 0; uma vez que eu não sabia qual era o maior nº.
+// utilizei a estrutura for para percorrer o array(meu paramentro) e atribui a condição se o index ao passar pelo
+// loop fosse maior que 0 , o resultado da my var bigNumber seria ele.
+// Ao descobrir o maior nº, dei continuidade na function principal, agora eu precisava saber quantas vezes ele se
+// repetia, mais tinha 1 problema se o nº fosse negativo? Tive que criar uma condição 1º para descobrir se o numero
+// era menor que zero, se fosse o return seria 1. e abri outra condiação se o maior nº fosse igual ao index do array
+// (arrayNumbers) o retorn seria somar + 1. Alguns pontos eu precisei de ajuda, do meu marido. como a ideia de criar
+// outra funcao p melhor visualizacao, ja que de inicio eu tinha feito somente com a estrutura for(2 vezes).
+
+function searchHigherNumber(arrayNumber) { // function aux para buscar o > number.
   let bigNumber = 0;
-  let repetBigNumber = 0;
   for (let index = 0; index < arrayNumber.length; index += 1) {
     if (arrayNumber[index] > bigNumber) {
       bigNumber = arrayNumber[index];
     }
   }
-  for (let index = 0; index < arrayNumber.length; index += 1) {
-    if (arrayNumber[index] < 0) { // verifica se o numero é negativo
+  return bigNumber;
+}
+
+function highestCount(arrayNumbers) {
+  let repetBigNumber = 0;
+  let bigNumber = searchHigherNumber(arrayNumbers);
+  for (let index = 0; index < arrayNumbers.length; index += 1) {
+    if (arrayNumbers[index] < 0) { // verifica se o numero é negativo
       return 1;
     }
-    if (bigNumber === arrayNumber[index]) {
+    if (bigNumber === arrayNumbers[index]) {
       repetBigNumber += 1;
     }
   }
