@@ -81,6 +81,8 @@ function highestCount(arrayNumbers) {
 }
 
 // Desafio 7
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs - utilizado para
+// transformar nº negativo em positivo. Match.abs
 function catAndMouse(mouse, cat1, cat2) {
   if (Math.abs(cat1 - mouse) === Math.abs(cat2 - mouse)) {
     return 'os gatos trombam e o rato foge';
