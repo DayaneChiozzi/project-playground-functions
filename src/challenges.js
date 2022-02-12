@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 // Desafio 1
 // adc 2 paramentros na funcao compareTrue utilizando o &&(recebe 2 valores)
 // usei o if/else para retornar true ou falso( para descobrir se o valor era
@@ -38,7 +39,7 @@ function concatName(listaDeNomes) {
 // Desafio 5
 // esse requisito eu tive ajuda do meu marido, para atribuir a variavel points
 function footballPoints(wins, ties) {
-  let points = (3 * wins) + (ties * 1);
+  let points = 3 * wins + ties * 1;
   return points;
 }
 
@@ -56,7 +57,8 @@ function footballPoints(wins, ties) {
 // (arrayNumbers) o retorn seria somar + 1. Alguns pontos eu precisei de ajuda, do meu marido. como a ideia de criar
 // outra funcao p melhor visualizacao, ja que de inicio eu tinha feito somente com a estrutura for(2 vezes).
 
-function searchHigherNumber(arrayNumber) { // function aux para buscar o > number.
+function searchHigherNumber(arrayNumber) {
+  // function aux para buscar o > number.
   let bigNumber = 0;
   for (let index = 0; index < arrayNumber.length; index += 1) {
     if (arrayNumber[index] > bigNumber) {
@@ -70,7 +72,8 @@ function highestCount(arrayNumbers) {
   let repetBigNumber = 0;
   let bigNumber = searchHigherNumber(arrayNumbers);
   for (let index = 0; index < arrayNumbers.length; index += 1) {
-    if (arrayNumbers[index] < 0) { // verifica se o numero é negativo
+    if (arrayNumbers[index] < 0) {
+      // verifica se o numero é negativo
       return 1;
     }
     if (bigNumber === arrayNumbers[index]) {
@@ -93,11 +96,24 @@ function catAndMouse(mouse, cat1, cat2) {
   return 'cat2';
 }
 
-console.log(catAndMouse(1, 0, 2));
+// console.log(catAndMouse(1, 0, 2));
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+// eslint-disable-next-line complexity - precisei de ajuda para colocar para entender o modula nessa funcao.
+function fizzBuzz(numbersArray) {
+  let resultado = [];
+  for (let index = 0; index < numbersArray.length; index += 1) {
+    if (numbersArray[index] % 3 === 0 && numbersArray[index] % 5 === 0) {
+      resultado.push('fizzBuzz');
+    } else if (numbersArray[index] % 3 === 0) {
+      resultado.push('fizz');
+    } else if (numbersArray[index] % 5 === 0) {
+      resultado.push('buzz');
+    } else {
+      resultado.push('bug!');
+    }
+  }
+  return resultado;
 }
 
 // Desafio 9
